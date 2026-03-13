@@ -24,6 +24,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .cors(cors -> {
+                })   // <-- ADD THIS
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
 
@@ -39,7 +41,6 @@ public class SecurityConfig {
                                 "/webjars/**"
                         ).permitAll()
 
-                        // All other APIs require authentication
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
