@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api")
 public class ProductController {
